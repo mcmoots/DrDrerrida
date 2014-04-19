@@ -33,7 +33,6 @@ def assembletweet(qf1, qf2):
         q2 = parsequotes(qf1)
         q1 = parsequotes(qf2)
     # pick random quote from f1
-    qdone = 0
     i = 0
     min2 = min(q2, key=lambda x: x[1])[1]
     for i in range(MAXTRIES):
@@ -45,7 +44,6 @@ def assembletweet(qf1, qf2):
     for i in range(MAXTRIES):
         r2 = random.randrange(0, len(q2))
         if TWEETSIZE - q1[r1][1] - 1 - q2[r2][1] >= 0:
-            qdone = 1
             break
     else:
         return None  # more exception handling if loop can't pick short q2
